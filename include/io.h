@@ -24,4 +24,13 @@ void enable_port_clock(enum Port port);
 void set_port_mode(enum Port port, uint8_t port_number, enum PortMode port_mode);
 void write_to_port(enum Port port, uint8_t port_number, bool value);
 
+// Enables ADC with all settings left default, but these:
+// - Continuous mode.
+// - Enabled channel 0.
+// - Sampling time: 239.5 ADC clock cycles (~17.1 us).
+void enable_continuous_adc(void);
+void start_continuous_adc(void);
+uint16_t get_adc_data(void);
+
+
 #endif // IO_H
